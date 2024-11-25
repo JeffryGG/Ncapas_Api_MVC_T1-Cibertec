@@ -1,0 +1,105 @@
+﻿@using Entity
+@model DocenteE
+
+@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+
+<div class="row mt-3">
+    <div class="col-2">
+        <a asp-controller="Docente" asp-action="Index" class="btn btn-primary"> Regresar</a>
+    </div>
+    <div class="col-10">
+        <label class="fw-bold">REGISTRAR DOCENTE</label>
+    </div>
+</div>
+
+<div class="row mt-2">
+    @if (!string.IsNullOrWhiteSpace(ViewBag.Mensaje))
+    {
+        <div class="alert alert-primary" role="alert">
+            @ViewBag.Mensaje
+        </div>
+    }
+    @if (!string.IsNullOrWhiteSpace(ViewBag.ErrorMensaje))
+    {
+        <div class="alert alert-danger" role="alert">
+            @ViewBag.ErrorMensaje
+        </div>
+    }
+</div>
+
+<div class="row mt-2">
+    <form asp-action="Create" asp-controller="Docente" method="post">
+        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+        <div class="card">
+            <div class="card-header">
+                Ingrese Datos
+            </div>
+            <div class="card-body">
+                <div class="row">
+                    <div class="col-12">
+                        Nombres
+                        <input type="text" asp-for="Nombres" class="form-control" />
+                        <span asp-validation-for="Nombres" class="text-danger">Campo Obligatorio</span>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-12">
+                        Apellido Paterno
+                        <input type="text" asp-for="ApellidoPaterno" class="form-control" />
+                        <span asp-validation-for="ApellidoPaterno" class="text-danger">Campo Obligatorio</span>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-12">
+                        Apellido Materno
+                        <input type="text" asp-for="ApellidoMaterno" class="form-control" />
+                        <span asp-validation-for="ApellidoMaterno" class="text-danger">Campo Obligatorio</span>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-12">
+                        Nro. Documento
+                        <input type="text" asp-for="NroDocumento" class="form-control" />
+                        <span asp-validation-for="NroDocumento" class="text-danger">Campo Obligatorio</span>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-12">
+                        Fecha de Nacimiento
+                        <input type="date" asp-for="FechaNacimiento" class="form-control" />
+                        <span asp-validation-for="FechaNacimiento" class="text-danger">Campo Obligatorio</span>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-12">
+                        Direccion
+                        <input type="text" asp-for="Direccion" class="form-control" />
+                        <span asp-validation-for="Direccion" class="text-danger">Campo Obligatorio</span>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-12">
+                        Email
+                        <input type="text" asp-for="Email" class="form-control" />
+                        <span asp-validation-for="Email" class="text-danger">Campo Obligatorio</span>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-12">
+                        Nro. de Celular
+                        <input type="text" asp-for="Celular" class="form-control" />
+                        <span asp-validation-for="Celular" class="text-danger">Campo Obligatorio</span>
+                    </div>
+                </div>
+            </div>
+            <div class="card-footer">
+                <button class="btn btn-success">Registrar</button>
+            </div>
+        </div>
+    </form>
+</div>
+
